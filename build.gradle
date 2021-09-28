@@ -10,7 +10,8 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 rewrite {
-	activeRecipe('org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration')
+	// activeRecipe('org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration')
+	activeRecipe('org.openrewrite.java.migrate.Java8toJava11')
 }
 
 repositories {
@@ -22,7 +23,8 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'junit:junit:4.12'
-	rewrite("org.openrewrite.recipe:rewrite-spring:4.12.0")
+	// rewrite("org.openrewrite.recipe:rewrite-spring:4.12.0")
+	rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.9.0")
 }
 
 test {
