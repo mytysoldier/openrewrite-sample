@@ -2,11 +2,16 @@ plugins {
 	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'org.openrewrite.rewrite'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+rewrite {
+	activeRecipe('org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration')
+}
 
 repositories {
 	mavenCentral()
@@ -17,6 +22,7 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'junit:junit:4.12'
+	rewrite("org.openrewrite.recipe:rewrite-spring:4.12.0")
 }
 
 test {
