@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +10,33 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
 	public static void main(String[] args) {
+		executeSampleCode();
 		SpringApplication.run(DemoApplication.class, args);
+	}
+
+	// java8→java11へマイグレーション検証用
+	public static void executeSampleCode() {
+		// パターン①：インスタンス化のマイグレーション
+		Boolean bool = new Boolean(true);
+		Byte b = new Byte("1");
+		Character c = new Character('c');
+		System.out.println(bool);
+		System.out.println(b);
+		System.out.println(c);
+
+		// パターン②：「_」1文字は使用できなくなる
+		String _ = "テスト太郎";
+		System.out.println(_);
+
+		// パターン③：暗黙的な型推論
+		List<String> strList = new ArrayList<String>(){
+			{
+				add("test1");
+				add("test2");
+				add("test3");
+			}
+		};
+		System.out.println(strList);
 	}
 
 }
