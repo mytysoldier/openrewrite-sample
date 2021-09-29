@@ -6,7 +6,7 @@
 
 ## How to execute
 - change directory to under project folder(openrewrite-sample)
-- run following command.
+- run following command.  
   ./gradlew rewriteRun
 
 ## For more information
