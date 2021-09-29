@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 rewrite {
-	// activeRecipe('org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration')
+	activeRecipe('org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration')
 	activeRecipe('org.openrewrite.java.migrate.Java8toJava11')
 }
 
