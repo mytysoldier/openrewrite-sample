@@ -37,6 +37,9 @@ public class DemoApplication {
 			}
 		};
 		System.out.println(strList);
+		
+		// パターン④：削除されたメソッド
+		new Thread().destroy();
 	}
 
 }
